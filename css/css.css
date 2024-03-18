@@ -1,0 +1,531 @@
+@charset "utf-8";
+
+/* CSS Document */
+body {
+	padding: 0px !important;
+	margin: 0px !important;
+	box-sizing: border-box !important;
+	font-family: 'Noto Sans TC', sans-serif !important;
+	font-size: 16px !important;
+	background-color: #f5ebe0 !important;
+	position: relative;
+
+}
+
+
+img.fixed-image {
+	padding: 0px !important;
+	margin: 0px !important;
+	min-height: 100vh;
+	position: fixed;
+	width: 100%;
+	z-index: -5;
+	bottom: 0;
+	left: 0;
+}
+
+.room-container {
+	min-height: 70vh;
+	background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+.goods-container {
+	min-height: 70vh;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+td {
+	padding-top: 2% !important;
+}
+
+#cover {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 5;
+	background: rgba(51, 51, 51, 0.4);
+	top: 0px;
+	left: 0px;
+	overflow: auto;
+}
+
+#coverr {
+
+	box-shadow:
+		0.7px 5.7px 5.3px rgba(0, 0, 0, 0.038),
+		2.5px 19.2px 17.9px rgba(0, 0, 0, 0.07),
+		11px 86px 80px rgba(0, 0, 0, 0.11);
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color: white;
+	width: 100%;
+	min-width: 300px;
+	max-width: 800px;
+	height: 50%;
+	min-height: 700px;
+	position: absolute;
+	z-index: 5;
+	background: #ffffff;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: auto;
+	overflow: auto;
+}
+
+
+.title {
+	position: relative;
+}
+
+.title-img {
+
+	height: 90vh;
+
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+.my-title-text {
+	width: 220px;
+	position: absolute;
+	bottom: 50%;
+	left: 45%;
+	background-color: rgba(203, 176, 176, 0.5);
+	border: 1px solid rgba(203, 176, 176, 0.8);
+	color: #ffffff;
+	padding: 10px;
+	font-size: 56px;
+	font-weight: bolder;
+}
+
+.about-us-box {
+	/* height: 120vh; */
+	margin-bottom: 20vh;
+	margin-top: 20vh;
+}
+
+/* 關於我們 */
+.about-us {
+	width: 700px;
+	height: 500px;
+	background-color: rgba(203, 176, 176, 0.5);
+	color: rgb(0, 0, 0);
+	padding: 30px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow:
+		1.8px 3.7px 2.5px rgba(0, 0, 0, 0.022),
+		4.4px 9.4px 6.3px rgba(0, 0, 0, 0.031),
+		9px 19.1px 12.9px rgba(0, 0, 0, 0.039),
+		18.6px 39.4px 26.6px rgba(0, 0, 0, 0.049),
+		51px 108px 73px rgba(0, 0, 0, 0.07);
+}
+
+.my-img {
+	width: 800px;
+	height: 500px;
+	border-radius: 20%;
+	position: relative;
+	font-size: 50px;
+
+}
+
+.my-cat-hand {
+	position: absolute;
+	transform: rotate(-45deg);
+	/* z-index: -1; */
+	top: -10%;
+	right: 0;
+	background-color: rgb(192, 158, 137);
+	border: 1px solid rgba(203, 176, 176, 0.8);
+	border-radius: 50%;
+	color: #000000f5;
+	/* 文字顏色 */
+	padding: 10px;
+	/* 內邊距，使得文字不會貼得太緊 */
+	font-size: 80px;
+	/* 文字大小，根據需要調整 */
+	box-shadow:
+		4.1px 5.8px 3.6px rgba(0, 0, 0, 0.033),
+		9.1px 12.8px 10px rgba(0, 0, 0, 0.071),
+		17.3px 24.2px 24.1px rgba(0, 0, 0, 0.118),
+		37px 52px 80px rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+
+.about-us-img {
+	border: 10px solid white;
+	box-shadow:
+		4.1px 5.8px 3.6px rgba(0, 0, 0, 0.033),
+		9.1px 12.8px 10px rgba(0, 0, 0, 0.071),
+		17.3px 24.2px 24.1px rgba(0, 0, 0, 0.118),
+		37px 52px 80px rgba(0, 0, 0, 0.19);
+}
+
+.my-line-height {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 32px;
+}
+
+/* room */
+.room {
+	margin-bottom: 20vh;
+}
+
+.img-top {
+	height: 40vh !important;
+}
+
+.my-modal-img {
+	width: 500px;
+	height: 500px;
+}
+
+/* news */
+.my-news-container {
+	/* background-color: #ddbea9; */
+	margin-bottom: 30vh;
+}
+
+.my-news {
+	font-size: 18px;
+	width: 100%;
+	padding: 2px;
+	/* height: 80vh; */
+	/* margin-top: 20vh; */
+	margin-bottom: 10vh;
+	margin-top: 5vh;
+	padding: 5px 10px 5px 10px;
+	/* color: #ffedd8;
+	background-color: #393d3f; */
+	color: #393d3f;
+	background-color: rgba(255, 227, 183, 0.3);
+	position: relative;
+}
+
+
+.my-news-icon {
+	font-size: 50px;
+	position: absolute;
+	transform: rotate(-10deg);
+	/* z-index: -1; */
+	top: -2%;
+	right: 50%;
+	/* background-color: rgb(192, 158, 137);
+border: 1px solid rgba(203, 176, 176, 0.8);  */
+	/* border-radius: 50%; */
+	color: rgb(100, 83, 72);
+}
+
+.my-footer {
+	left: 0px;
+	bottom: 0px;
+	position: relative;
+	background: rgb(68, 65, 54);
+	margin-top: 4px;
+	/* height: 400px; */
+	display: block;
+	color: #ffffff !important;
+}
+
+
+
+
+.room {
+
+	position: relative;
+	overflow: hidden;
+	margin-top: 20vh;
+
+}
+
+
+.room-1-text {
+	width: 200px;
+	position: absolute;
+	/* 絕對定位 */
+	bottom: 5%;
+	/* 距離容器底部的距離 */
+	left: 60%;
+	/* 距離容器左側的距離 */
+	background-color: rgba(255, 255, 255, 0.679);
+	/* border: 1px solid rgba(203, 176, 176, 0.8); */
+	/* 背景色透明度，可以根據需要調整 */
+	color: #2c0d0d;
+	/* 文字顏色 */
+	padding: 10px;
+	/* 內邊距，使得文字不會貼得太緊 */
+	font-size: 28px;
+	/* 文字大小，根據需要調整 */
+}
+
+.room-1-text:hover {
+	background-color: rgba(255, 255, 255, 0.679);
+	width: 100%;
+	height: 100%;
+	left: 0%;
+	padding-left: 40%;
+	padding-top: 30%;
+	bottom: -2%;
+	cursor: pointer;
+
+}
+
+.goods-img {
+	width: 100%;
+
+}
+
+.goods-img img {
+	width: 100%;
+	height: 30vh;
+	margin: 10px auto;
+
+}
+
+.goods-text {
+	width: 100%;
+	position: absolute;
+	/* 絕對定位 */
+	bottom: 20%;
+	/* 距離容器底部的距離 */
+	left: 0%;
+	/* 距離容器左側的距離 */
+	background-color: rgba(255, 255, 255, 0.679);
+	/* border: 1px solid rgba(203, 176, 176, 0.8); */
+	/* 背景色透明度，可以根據需要調整 */
+	color: #2c0d0d;
+	/* 文字顏色 */
+	padding: 10px;
+	/* 內邊距，使得文字不會貼得太緊 */
+	font-size: 20px;
+	/* 文字大小，根據需要調整 */
+	opacity: 0;
+}
+
+.goods-text:hover {
+	background-color: rgba(0, 0, 0, 0.387);
+	width: 100%;
+	/* height: 100%; */
+	bottom: 20%;
+	left: 0%;
+	cursor: pointer;
+	opacity: 1;
+	z-index: 10;
+
+
+}
+
+
+
+
+/* .room-2-text {
+	width: 200px;
+	position: absolute;
+	bottom: 5%;
+	left: 60%;
+	background-color: rgba(164, 33, 33, 0.7);
+	color: #2c0d0d;
+	padding: 10px;
+	font-size: 28px;
+} */
+
+
+
+.my-box-shadow {
+	box-shadow:
+		0.7px 5.7px 5.3px rgba(0, 0, 0, 0.038),
+		2.5px 19.2px 17.9px rgba(0, 0, 0, 0.07),
+		11px 86px 80px rgba(0, 0, 0, 0.11);
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color: white;
+	width: 99%;
+	padding: 20px;
+	margin: auto;
+	overflow: auto;
+}
+
+
+.cent {
+	text-align: center;
+}
+
+
+
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.about-us-btn {
+	width: 30%;
+	background-color: rgb(202, 156, 95) !important;
+}
+
+.about-us-btn:hover {
+	background: var(--bs-dark) !important;
+	color: rgb(202, 156, 95) !important;
+}
+
+.my-btn-ok {
+	background-color: rgb(202, 156, 95);
+	color: #fff4ed;
+}
+
+.my-btn-ok:hover {
+	background-color: rgb(232, 176, 109);
+	color: #fff4ed;
+}
+
+.my-btn-reset {
+	background-color: #89a067;
+	color: #fff4ed;
+}
+
+.my-btn-reset:hover {
+	background-color: #a4be7c;
+	color: #fff4ed;
+}
+
+.my-btn-update {
+	background-color: rgb(95, 157, 202);
+	color: #fff4ed;
+}
+
+.my-btn-update:hover {
+	background-color: rgb(106, 176, 226);
+	color: #fff4ed;
+}
+
+/* login */
+
+.login-box {
+	position: relative;
+	height: 100vh;
+	/* width: 50%; */
+}
+
+.login-img,
+.book-img {
+	width: 100%;
+	height: 100%;
+}
+
+.login-logo {
+	position: absolute;
+	height: 10vh;
+	width: 50vh;
+	left: 5%;
+	top: 2%;
+}
+
+
+
+.login {
+	width: 50vh;
+	height: 50vh;
+}
+
+/* reg */
+
+.reg {
+	width: 50vh;
+	height: 80vh;
+}
+
+.my-btn-login {
+	width: 100%;
+	background-color: burlywood;
+	border: 0;
+	height: 6vh;
+}
+
+.my-login-reset {
+	width: 100%;
+	height: 6vh;
+	background-color: white !important;
+	color: burlywood !important;
+	border: 1px solid burlywood !important;
+
+}
+
+.my-btn-login:hover {
+	background-color: rgb(202, 156, 95) !important;
+
+	border: 1px solid burlywood !important;
+
+}
+
+.my-login-reset:hover {
+	background-color: black !important;
+	color: white !important;
+}
+
+/* 輪播圖片 */
+.carousel-item img {
+	width: 100%;
+	/* 設定圖片寬度為100% */
+	height: 80vh;
+	/* 您可以根據需要調整高度，這裡設定為400px作為示例 */
+	object-fit: cover;
+	/* 確保圖片能填滿整個容器，而不會變形 */
+}
+
+/* 預定頁面 */
+.book-box {
+	position: relative;
+	height: 100vh;
+	/* width: 50%; */
+}
+
+/* iframe */
+.my-contact-container {
+	/* background-color: #e6ccb2; */
+	padding: 1%;
+}
+
+.my-iframe-box {
+	color: #393d3f;
+	/* background-color: #ffedd8; */
+	margin-top: 5vh;
+	margin-bottom: 30vh;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	box-shadow:
+		0.7px 1px 2.4px -23px rgba(0, 0, 0, -0.011),
+		1.7px 2.4px 5.8px -23px rgba(0, 0, 0, -0.019),
+		3.2px 4.3px 10.9px -23px rgba(0, 0, 0, -0.022),
+		5.2px 7.1px 19.4px -23px rgba(0, 0, 0, -0.016),
+		8.3px 11.2px 36.3px -23px rgba(0, 0, 0, 0.015),
+		14px 19px 87px -23px rgba(0, 0, 0, 0.33);
+}
+
+
+
+.my-iframe {
+	backdrop-filter: blur(5px);
+	height: 80vh;
+	overflow: hidden;
+}
+
+.my-iframe-text {
+	backdrop-filter: blur(5px);
+
+}
