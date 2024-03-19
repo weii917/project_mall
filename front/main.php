@@ -47,7 +47,7 @@
 
 		function ww() {
 			$("#mwww").html("<embed  class='about-us-img' loop=true src='./img/" + lin[now] + "' style='width:99%; height:100%;'></embed>")
-			//$("#mwww").attr("src",lin[now])
+
 			$("#mwwwtext").html("<pre loop=true>" + linText[now] + "</pre>")
 
 			now++;
@@ -77,20 +77,20 @@
 
 						<img src="./img/<?= $row['img'] ?>" class="img-top" alt="...">
 						<div class="">
-							<h5 data-bs-toggle="modal" data-bs-target="#exampleModalLg<?= $idx ?>" class="room-1-text text-start"><?= $row['room'] ?><br>
-								<button type="button" class="btn btn-outline-secondary mt-2 " data-bs-toggle="modal" data-bs-target="#exampleModalLg<?= $idx ?>">
+							<h5 data-bs-toggle="modal" data-bs-target="#exampleModalLg<?= $idx; ?>" class="room-1-text text-start"><?= $row['room'] ?><br>
+								<button type="button" class="btn btn-outline-secondary mt-2 " data-bs-toggle="modal" data-bs-target="#exampleModalLg<?= $idx; ?>">
 									more...
 								</button>
 							</h5>
 
 
 							<!-- lg start -->
-							<div class="modal fade" id="exampleModalLg<?= $idx ?>" tabindex="-1" aria-labelledby="exampleModalLabel<?= $idx ?>" aria-hidden="true">
+							<div class="modal fade" id="exampleModalLg<?= $idx; ?>" tabindex="-1" aria-labelledby="exampleModalLabel<?= $idx ?>;" aria-hidden="true">
 								<div class="modal-dialog modal-xl">
 									<div class="modal-content">
 										<div class="modal-header">
 
-											<h1 class="modal-title fs-5" id="exampleModalLabel<?= $idx ?>"><?= $row['room'] ?></h1>
+											<h1 class="modal-title fs-5" id="exampleModalLabel<?= $idx; ?>"><?= $row['room'] ?></h1>
 
 											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 										</div>
@@ -123,153 +123,83 @@
 			?>
 
 
-			<!-- <div class="col-12 col-md-4 mt-5 mb-5">
-
-				<div class="card">
-					<img src="./img/cat4.jpg" class="img-top" alt="...">
-					<div class="">
-						<h5 data-bs-toggle="modal" data-bs-target="#exampleModalLg-2" class="room-1-text text-start">溫馨房<br>
-							<button type="button" class="btn btn-outline-secondary mb-1" data-bs-toggle="modal" data-bs-target="#exampleModalLg-2">
-								more
-							</button>
-						</h5>
-						
-						<div class="modal fade" id="exampleModalLg-2" tabindex="-1" aria-labelledby="exampleModalLabel-b" aria-hidden="true">
-							<div class="modal-dialog modal-lg">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h1 class="modal-title fs-5" id="exampleModalLabel-b">溫馨房</h1>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										寬 155cm * 深 150cm * 高 350cm <br>
-										溫馨舒適 <br><br>
-										最多入住 : 4貓<br>
-										適合成年活潑貓咪<br>
-										提供：陶瓷貓碗、實木貓碗架、
-										開放型貓砂盆<br>
-										貓砂提供：礦砂、豆腐砂、松木砂<br>
-										房間和公共空間均有24小時的雲端監控系統<br>
-										四層貓跳台
-										供貓咪跳躍使用
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
 
 		</div>
 	</div>
 	<!--item end  -->
 	<div id="item-2-goods"></div>
-	<?php
-	$type = $_GET['type'] ?? 0;
-	$nav = '';
-	$goods = null;
-	if ($type == 0) {
-		$nav = "全部商品";
-		$goods = $Goods->all(['sh' => 1]);
-	} else {
-		$t = $Type->find($type);
-		if ($t['big_id'] == 0) {
-			$nav = $t['name'];
-			$goods = $Goods->all(['sh' => 1, 'big' => $t['id']]);
-		} else {
-			$b = $Type->find($t['big_id']);
-			$nav = $b['name'] . " > " . $t['name'];
-			$goods = $Goods->all(['sh' => 1, 'mid' => $t['id']]);
-		}
-	}
-
-	?>
-	<h2><?= $nav; ?></h2>
-	<div class="goods-container room mx-auto container-fluid">
-		<!-- d-flex讓card一樣高 -->
-		<div class="row justify-content-end ">
-
-			<h1 class="col-12 col-sm-12 col-lg-2 text-end border-bottom">商品</h1>
-		</div>
-		<div class="row">
-
-
-			<?php
-			foreach ($goods as $idx => $good) {
-			?>
-				<div class=" col-12 col-md-3 mt-5 mb-5">
-					<div class="card">
-						<div class="goods-img">
-							<a href="?do=detail&id=<?= $good['id']; ?>" data-bs-toggle="modal" data-bs-target="#goodsModalLg<?= $idx ?>">
-								<img src="./img/<?= $good['img'] ?>">
-							</a>
-						</div>
-
-						<div class="">
-							<h5 class="goods-text text-start"><?= $good['name']; ?><br>
-								<img src="./icon/0402.jpg" style="float:right" onclick="buy(<?= $good['id']; ?>,1)">
-							</h5>
-							<div style="color:red;font-size:24px">
-								$<?= $good['price']; ?>
-
-							</div>
-
-
-
-							<!-- lg start -->
-							<div class="modal fade" id="goodsModalLg<?= $idx ?>" tabindex="-1" aria-labelledby="goodsModalLabel<?= $idx ?>" aria-hidden="true">
-								<div class="modal-dialog modal-xl">
-									<div class="modal-content">
-										<div class="modal-header">
-
-											<h1 class="modal-title fs-5" id="goodsModalLabel<?= $idx ?>"><?= $good['name'] ?></h1>
-
-											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-										</div>
-										<div class="modal-body">
-											<div class="row">
-												<div class="col-6 p-5 d-flex flex-column justify-content-center align-items-start">
-
-													<div class="info">
-														<div>分類：<?= $Type->find($good['big'])['name']; ?> > <?= $Type->find($good['mid'])['name']; ?></div>
-														<div>編號：<?= $good['no']; ?></div>
-														<div>價錢：<?= $good['price']; ?></div>
-														<div>詳細說明：<?= $good['intro']; ?></div>
-														<div>庫存量：<?= $good['stock']; ?></div>
-													</div>
-													<div>
-														購買數量:
-														<input type="number" id="qt" value="1" style="width:50px;">
-														<input type="hidden" id="id" value="<?= $good['id']; ?>">
-														<a onclick="buymore(<?= $good['id']; ?>)" class="btn btn-outline-warning">我要購買 &nbsp;<i class="fa-solid fa-arrow-right"></i></a>
-													</div>
-
-												</div>
-												<img class="col-6" src="./img/<?= $good['img'] ?>" class="img-top" alt="...">
-											</div>
-										</div>
-
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-				</div>
-			<?php
+	<!-- <?php
+			$type = $_GET['type'] ?? 0;
+			$nav = '';
+			$goods = null;
+			if ($type == 0) {
+				$nav = "全部商品";
+				$goods = $Goods->all(['sh' => 1]);
+			} else {
+				$t = $Type->find($type);
+				if ($t['big_id'] == 0) {
+					$nav = $t['name'];
+					$goods = $Goods->all(['sh' => 1, 'big' => $t['id']]);
+				} else {
+					$b = $Type->find($t['big_id']);
+					$nav = $b['name'] . " > " . $t['name'];
+					$goods = $Goods->all(['sh' => 1, 'mid' => $t['id']]);
+				}
 			}
-			?>
+
+			?> -->
+	<!-- <h2><?= $nav; ?></h2> -->
+	<div class="goods-container room mx-auto row">
+		<div class="col-8 mx-auto">
+			<div class="row justify-content-end ">
+
+				<h1 class="col-12 col-sm-12 col-lg-2 text-end border-bottom">商品</h1>
+			</div>
+			<div class="row">
 
 
+				<?php
+				foreach ($goods as $idx => $good) {
+				?>
+					<div class="col-12 col-lg-3 col-md-6 mt-5 mb-5">
+						<div class="card">
+							<div class="goods-img">
+								<a href="detail.php?id=<?= $good['id']; ?>">
+									<img src="./img/<?= $good['img'] ?>">
+								</a>
+							</div>
+
+							<div class="">
+								<h3 class="goods-text text-center">
+									<div style="text-align:center;" onclick="buy(<?= $good['id']; ?>,1)">
+										<span class="px-3"><i class="fa-regular fa-heart"></i></span>
+										<span class="px-3"><i class="fa-solid fa-cart-shopping" title='放入購物車'></i></span>
+									</div>
+									<!-- <img src="./icon/0402.jpg" style="float:right" onclick="buy(<?= $good['id']; ?>,1)"> -->
+								</h3>
+								<div>
+									<h3><?= $good['name'] ?></h3>
+									<pre style="color:red;font-size:24px">$<?= $good['price']; ?></pre>
+
+								</div>
+
+
+								<!-- lg start -->
+
+
+							</div>
+
+						</div>
+					</div>
+				<?php
+				}
+				?>
+
+
+			</div>
 		</div>
+		<!-- d-flex讓card一樣高 -->
+
 	</div>
 
 	<div id="item-3-contact"></div>
@@ -366,11 +296,13 @@
 			qt
 		}, (amount) => {
 			$("#amount").text(amount)
+			alert("加入購物車成功")
 		})
 	}
 
-	function buymore(id) {
-		let qt = $("#qt").val()
-		location.href = `?do=buycart&id=${id}&qt=${qt}`
+	function buymore(idmore) {
+		let qtmore = $("#qtmore").val()
+		console.log(qtmore);
+		// location.href = `buycart.php?id=${idmore}&qt=${qtmore}`
 	}
 </script>

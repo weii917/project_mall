@@ -1,5 +1,6 @@
 <?php include_once "./api/db.php"; ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html>
 <!-- saved from url=(0040)http://127.0.0.1/test/exercise/collage/? -->
 <html lang="en">
 
@@ -19,7 +20,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- 乙級原有 -->
 	<link rel="stylesheet" href="./css/css.css">
-	<script src="./js/jquery-1.9.1.min.js"></script>
+	<script src="./js/jquery-3.4.1.min.js"></script>
 	<script src="./js/js.js"></script>
 
 	<!-- animate -->
@@ -30,10 +31,10 @@
 <!-- style="background-color: #B9887D; color:aliceblue; -->
 
 <body>
-	<nav class="navbar navbar-expand-lg sticky-top " style="background-color: #B9887D; color:aliceblue;">
+	<nav class="navbar navbar-expand-lg sticky-top " style="background-color: #B9887D; color:aliceblue;opcity:8">
 		<div class="container-fluid">
 			<i class="fa-solid fa-paw"></i>
-			<a class="navbar-brand ms-2" href="#">貓旅</a>
+			<a class="navbar-brand ms-2" href="index.php">貓旅</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -68,12 +69,30 @@
 				<?php
 				if (isset($_SESSION['mem'])) {
 				?>
-					<button class="my-btn btn btn-outline-light p-2 " onclick="lo('buycart.php')">購物車</button> &nbsp; &nbsp; |&nbsp; &nbsp;
+					<button class="my-btn btn btn-outline-light p-2 " onclick="lo('buycart.php')">
+						<i class="fa-solid fa-cart-shopping"></i>(
+						<span id='amount'>
+							<?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+								echo count($_SESSION['cart']);
+							} else {
+								echo 0;
+							}
+							?>
+						</span> )</button> &nbsp; &nbsp; |&nbsp; &nbsp;
 					<button class="btn btn-outline-light p-2 m-2" onclick="lo('./api/logout.php')" type="button">登出</button> &nbsp; &nbsp; |&nbsp; &nbsp;
 				<?php
 				} else {
 				?>
-					<button class="my-btn btn btn-outline-light p-2" onclick="lo('buycart.php')">購物車</button>&nbsp; &nbsp; |&nbsp; &nbsp;
+					<button class="my-btn btn btn-outline-light p-2" onclick="lo('buycart.php')">
+						<i class="fa-solid fa-cart-shopping"></i>(
+						<span id='amount'>
+							<?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+								echo count($_SESSION['cart']);
+							} else {
+								echo 0;
+							}
+							?>
+						</span> )</button>&nbsp; &nbsp; |&nbsp; &nbsp;
 					<button class="my-btn btn btn-outline-light p-2" onclick="lo('./front/login.php')">會員登入</button>&nbsp; &nbsp;|&nbsp; &nbsp;
 
 				<?php
@@ -83,7 +102,7 @@
 				<?php
 				if (isset($_SESSION['admin'])) {
 				?>
-					<button class="btn btn-outline-light p-2 m-2" onclick="lo('./api/logout.php')" type="button">登出</button>&nbsp; &nbsp; |&nbsp; &nbsp;
+
 					<button class="my-btn btn btn-outline-light p-2" onclick="lo('back.php')">返回管理</button>&nbsp; &nbsp; |&nbsp; &nbsp;
 				<?php
 				} else {
@@ -111,7 +130,7 @@
 		<?php
 		$title = $Title->find(['sh' => 1]);
 		?>
-		<a title="<?= $title['text']; ?>" href="#">
+		<a title="<?= $title['text']; ?>" href="index.php">
 			<div class="title-img col" style="background:url(&#39;./img/<?= $title['img']; ?>&#39;); background-size:cover; background-position: center;"></div><!--標題-->
 			<!-- <div class="my-title-text-1">最細心的照料</div> -->
 			<div class="col-12 col-lg-2 my-title-text animate__animated animate__bounceIn">

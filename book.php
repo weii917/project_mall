@@ -27,7 +27,7 @@ if (isset($_GET['error'])) {
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- 乙級原有 -->
-    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/js.js"></script>
 
 </head>
@@ -173,8 +173,8 @@ if (isset($_GET['error'])) {
 
                         <!-- Submit button -->
                         <input type="hidden" name="table" value="book"></input>
-                        <input type="submit" value="提交" class="my-btn-login btn  btn-block mb-4"></input>
-                        <input type="reset" value="清除" class="my-login-reset btn  btn-block mb-4"></p>
+                        <input type="submit" value="提交" class="my-btn-login btn mb-4"></input>
+                        <input type="reset" value="清除" class="my-login-reset btn  mb-4"></p>
 
                     </form>
                 </div>

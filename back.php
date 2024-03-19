@@ -27,7 +27,7 @@ if (!isset($_SESSION['admin'])) {
   <!--bootstrap css js end -->
   <!-- 乙級原有的 -->
   <link href="./css/css.css" rel="stylesheet" type="text/css">
-  <script src="./js/jquery-1.9.1.min.js"></script>
+  <script src="./js/jquery-3.4.1.min.js"></script>
   <script src="./js/js.js"></script>
   <!-- 乙級原有的end -->
 

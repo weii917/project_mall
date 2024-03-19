@@ -58,15 +58,15 @@ include_once "../api/db.php";
 
                     <div class="mb-3">
                         <label for="" class="form-label">電話</label>
-                        <input name="tel" style="border: none; border-bottom: 1px solid lightgray;" type="text" class="form-control" id="tel" placeholder="account">
+                        <input name="tel" style="border: none; border-bottom: 1px solid lightgray;" type="text" class="form-control" id="tel" placeholder="telphone">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">住址</label>
-                        <input name="addr" style="border: none; border-bottom: 1px solid lightgray;" type="text" class="form-control" id="addr" placeholder="account">
+                        <input name="addr" style="border: none; border-bottom: 1px solid lightgray;" type="text" class="form-control" id="addr" placeholder="address">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">電子信箱</label>
-                        <input name="email" style="border: none; border-bottom: 1px solid lightgray;" type="text" class="form-control" id="email" placeholder="account">
+                        <input name="email" style="border: none; border-bottom: 1px solid lightgray;" type="text" class="form-control" id="email" placeholder="email">
                     </div>
 
 

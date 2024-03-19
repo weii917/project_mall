@@ -149,7 +149,7 @@ include_once "../api/db.php";
                 if (parseInt(res) == 0) {
                     alert("帳號或密碼錯誤，請重新輸入")
                 } else {
-                    location.href = '../index.php';
+                    location.href = '../buycart.php';
                 }
             })
     }
