@@ -118,17 +118,17 @@ $goods = $Goods->find($_GET['id']);
 
         <div class="row">
 
-            <div class="buycart-box col-12 col-lg-6 pb-5 justify-content-center d-flex flex-column align-items-centers mx-auto">
+            <div class="buycart-box col-12 col-lg-6 pb-5 justify-content-center d-flex flex-column align-items-center mx-auto">
 
                 <h2 class="ct"><?= $goods['name']; ?></h2>
 
-                <div class='item'>
-                    <div class="img">
+                <div class='item mx-auto col-8'>
+                    <div class="img mx-auto">
                         <a href="?id=<?= $goods['id']; ?>">
-                            <img src="./img/<?= $goods['img']; ?>" style="width:30vw;height:50vh">
+                            <img src="./img/<?= $goods['img']; ?>" style="width:100%;height:50%">
                         </a>
                     </div>
-                    <div class="info">
+                    <div class="info mx-auto">
                         <div>分類：<?= $Type->find($goods['big'])['name']; ?></div>
                         <div>編號：<?= $goods['no']; ?></div>
                         <div>價錢：<?= $goods['price']; ?></div>
@@ -136,13 +136,19 @@ $goods = $Goods->find($_GET['id']);
 
                     </div>
                 </div>
-                <div class="text-center pt-5 d-flex mx-auto">
-                    購買數量: &nbsp;&nbsp;
-                    <button class="btn   btn-light" onclick="decrement()"><i class="fa-solid fa-minus"></i></button>
-                    <input type="number" id="qt" value="1" style="width:100px;" class="form-control">
-                    <button class="btn   btn-light" onclick="increment()"><i class="fa-solid fa-plus"></i></button>
-                    &nbsp;&nbsp;
-                    <button class="btn btn-warning text-end" onclick="buy()">我要購買</button>
+                <div class="text-center pt-5">
+                    <div>購買數量 &nbsp;&nbsp;</div>
+                    <div class=" d-flex mx-auto py-3">
+                        <button class="btn btn-light " onclick="decrement()"><i class="fa-solid fa-minus"></i></button>
+                        <input type="number" id="qt" value="1" style="width:100px;" class="form-control">
+                        <button class="btn btn-light " onclick="increment()"><i class="fa-solid fa-plus"></i></button>
+                        &nbsp;&nbsp;
+                    </div>
+                    <div>
+                        <button class="btn btn-warning text-end" onclick="buy()">我要購買</button>
+                    </div>
+
+
 
                 </div>
 

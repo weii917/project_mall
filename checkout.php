@@ -4,10 +4,11 @@
 
 <!-- table.all>tr*6>td.tt.ct+td.pp>input:text -->
 <?php
-$row = $Mem->find(['acc' => $_SESSION['mem']]);
-if (isset($_GET['id'])) {
-    $_SESSION['cart'][$_GET['id']] = $_GET['qt'];
+if (empty($_SESSION['mem'])) {
+    to("./front/login.php");
 }
+$row = $Mem->find(['acc' => $_SESSION['mem']]);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -213,13 +214,13 @@ if (isset($_GET['id'])) {
                                     }
                                     ?>
                                     <tr>
-                                        <td class="px-3 py-5 text-center" colspan="7">總計: <span style="font-size: 32px;"><?= $total; ?></span></td>
+                                        <td class="px-3 py-5 text-center" colspan="7">總計: $NT <span style="font-size: 32px;"><?= $total; ?></span></td>
                                     </tr>
                                 </table>
                             </div>
 
                             <div class="col-12 mx-auto d-flex justify-content-between">
-                                <button class="my-buycart-back btn" onclick="location.href='index.php#item-2-goods'">繼續購物</button>
+                                <button class="my-buycart-back btn" type="button" onclick="location.href='buycart.php'">返回購物車</button>
                                 <input class="my-btn-buycart btn" type="submit" value="結帳">
                                 <input type="hidden" name="total" value="<?= $total; ?>">
 

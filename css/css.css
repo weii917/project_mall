@@ -478,6 +478,20 @@ a:hover {
 }
 
 /* buycart button start*/
+.my-buycart-bg {
+	background-image: url('../img/empty.jpg');
+
+	width: 50%;
+	height: 50vh;
+	opacity: 1;
+	background-size: cover;
+	/* 確保圖片覆蓋整個元素 */
+	background-repeat: no-repeat;
+	/* 避免圖片重複 */
+	background-position: center;
+	/* 將圖片置中 */
+}
+
 .my-btn-buycart {
 	display: inline-block;
 	width: 30%;
@@ -495,6 +509,7 @@ a:hover {
 
 .my-buycart-back {
 	width: 30%;
+
 	height: 6vh;
 	background-color: white !important;
 	color: burlywood !important;
@@ -508,6 +523,24 @@ a:hover {
 	color: white !important;
 
 }
+
+.my-buycart-empty {
+	width: 500px;
+
+	height: 6vh;
+	background-color: white !important;
+	color: burlywood !important;
+	border: 1px solid burlywood !important;
+}
+
+.my-buycart-empty:hover {
+
+	width: 100%;
+	background-color: black !important;
+	color: white !important;
+
+}
+
 
 
 
@@ -538,6 +571,13 @@ a:hover {
 
 	/* width: 50%; */
 }
+
+/* 小計的邊框 */
+.smallTotal {
+	border: 0px solid white;
+}
+
+/* 小計的邊框 */
 
 /* detail btn */
 /* .my-btn-qt {

@@ -135,9 +135,9 @@ if (!isset($_SESSION['mem'])) {
 
                     if (empty($_SESSION['cart'])) {
                     ?>
-                        <div style="width:100%;height:50vh;background-color:white">
-                            <h3 class="text-center">購物車內無任何商品</h3>
-                            <button class="my-buycart-back btn" onclick="location.href='index.php#item-2-goods'">繼續購物</button>
+                        <div style="width:100%;height:50vh;background-color:white" class="text-center my-buycart-bg">
+                            <h3 class="text-center pt-3" style="color: white;">購物車內無任何商品</h3>
+                            <button class="my-buycart-empty btn" onclick="location.href='index.php#item-2-goods'">繼續購物</button>
                         </div>
                     <?php
 
@@ -166,12 +166,11 @@ if (!isset($_SESSION['mem'])) {
                                         <td class="px-3 py-5"><?= $goods['name']; ?></td>
                                         <td class="px-3 py-5"><img src="./img/<?= $goods['img']; ?>" style="width:100px;height:100px"></td>
                                         <td class="px-3 py-5">
-                                            <?= $qt; ?>
+
+                                            <input type="number" class="qt" value="<?= $qt; ?>" data-id="<?= $id; ?>" data-price="<?= $goods['price']; ?>" style="width:60px;" class="form-control">
                                         </td>
-
                                         <td class="px-3 py-5"><?= $goods['price']; ?></td>
-                                        <td class="px-3 py-5"><?= $goods['price'] * $qt; ?></td>
-
+                                        <td class="px-3 py-5"> <input type="text" name="" class="smallTotal" id="smallTotal<?= $id; ?>" value="<?= $goods['price'] * $qt; ?>" class="form-control" style="width:100px;" readonly></td>
                                         <td class="px-3 py-5"> <span onclick="delCart(<?= $id; ?>)"><i class="fa-solid fa-trash"></i></span></td>
                                     </tr>
                                 <?php
@@ -179,14 +178,14 @@ if (!isset($_SESSION['mem'])) {
                                 }
                                 ?>
                                 <tr>
-                                    <td class="px-3 py-5 text-center" colspan="7">總計: <span style="font-size: 32px;"><?= $total; ?></span></td>
+                                    <td class="px-3 py-5 text-center" colspan="7">總計: $NT <span style="font-size: 32px;" id="addTotal"><?= $total; ?></span></td>
                                 </tr>
                             </table>
                         </div>
 
                         <div class="col-12 mx-auto d-flex justify-content-between">
                             <button class="my-buycart-back btn" onclick="location.href='index.php#item-2-goods'">繼續購物</button>
-                            <button class="my-btn-buycart btn" onclick="location.href='checkout.php'">結帳</button>
+                            <button class="my-btn-buycart btn" onclick="location.href='checkout.php'">下一步</button>
                         </div>
 
                         <script>
@@ -255,5 +254,45 @@ if (!isset($_SESSION['mem'])) {
     </div>
 
 </body>
+<script>
+    // 當數量改變再存到購物車重新存取數量到session，及重新計算總價
+    $(".qt").on("change", function() {
+        let qt = $(this).val();
+        let id = $(this).data('id');
+        let price = $(this).data('price');
+        let total = 0;
+        // console.log('id', id);
+        // console.log('qt', qt);
+        // console.log('price', price);
+        if (qt <= 0) {
+
+            $.post("../api/del_cart.php", {
+                id
+            }, () => {
+                location.href = "?";
+            })
+        } else {
+            $.post("./api/buycart.php", {
+                qt,
+                id
+            }, (amount) => {
+                $("#amount").text(amount)
+                $(".qt").text(qt)
+                let smallTotal = qt * price;
+                // console.log('smallTotal', smallTotal);
+                $(`#smallTotal${id}`).val(smallTotal);
+
+                $(".smallTotal").each(function() {
+                    total += parseInt($(this).val());
+                })
+                // console.log('Total', total);
+                $("#addTotal").text(total);
+
+            });
+        }
+
+
+    })
+</script>
 
 </html>
