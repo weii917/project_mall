@@ -5,14 +5,14 @@
             <table class="mx-auto" style="text-align: center;width:60%">
                 <tbody>
                     <tr class="yel">
-                        <td width="45%">帳號</td>
-                        <td width="45%">密碼</td>
-                        <td width="10%">刪除</td>
+                        <td width="40%">帳號</td>
+                        <td width="40%">密碼</td>
+                        <td width="20%">管理</td>
                     </tr>
                     <!-- 取資料料表資料放入後台顯示表格中 -->
 
                     <?php
-                    $rows = $DB->all();
+                    $rows = $Admin->all();
                     foreach ($rows as $row) {
 
 
@@ -21,7 +21,17 @@
 
                             <td><input class="form-control" type="text" name="acc[]" value="<?= $row['acc']; ?>" style="width:100%"></td>
                             <td><input class="form-control" type="password" name="pw[]" value="<?= $row['pw']; ?>" style="width:100%"></td>
-                            <td><input class="form-check-input" type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
+                            <td> <?php
+                                    if ($row['acc'] == 'admin') {
+                                        echo "此帳號為最高權限";
+                                    } else {
+                                    ?>
+                                    <button class="btn btn-secondary" onclick="location.href='?do=edit_admin&id=<?= $row['id']; ?>'">修改</button>
+                                    <button onclick="del('admin',<?= $row['id']; ?>)">刪除</button>
+                                <?php
+                                    }
+                                ?>
+                            </td>
 
                         </tr>
                         <input type="hidden" name="id[]" value="<?= $row['id']; ?>">

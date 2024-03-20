@@ -328,6 +328,22 @@ if (!isset($_SESSION['admin'])) {
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" href="?do=th">
+                  <svg class="bi">
+                    <use xlink:href="#puzzle" />
+                  </svg>
+                  商品介紹管理
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" href="?do=order">
+                  <svg class="bi">
+                    <use xlink:href="#puzzle" />
+                  </svg>
+                  訂單管理
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="?do=address">
                   <svg class="bi">
                     <use xlink:href="#puzzle" />
@@ -376,7 +392,14 @@ if (!isset($_SESSION['admin'])) {
                   管理者帳號管理
                 </a>
               </li>
-
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" href="?do=mem">
+                  <svg class="bi">
+                    <use xlink:href="#people" />
+                  </svg>
+                  會員帳號管理
+                </a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="?do=total">
                   <svg class="bi">

@@ -4,7 +4,7 @@
     <div class="row mt-5 mb-5 my-box-shadow">
         <p class="text-center fs-3 fw-bold">訂房管理</p>
         <form method="post" action="./api/edit.php">
-            <table width="100%" style="text-align: center;">
+            <table width="100%" style="text-align: center;" class="table-responsive">
                 <tbody>
                     <tr class="yel">
                         <td width="5%">編號</td>

@@ -1,33 +1,38 @@
 // JavaScript Document
 // mouseover滑鼠滑進mainmu區域的動作會在.mainmu子元素顯示.mw裡的東西
 // mouseout移開.mainmu區域會觸發隱藏子元素.mw
-$(document).ready(function(e) {
-    $(".mainmu").mouseover(
-		function()
-		{
+$(document).ready(function (e) {
+	$(".mainmu").mouseover(
+		function () {
 			$(this).children(".mw").stop().show()
 		}
 	)
 	$(".mainmu").mouseout(
-		function ()
-		{
+		function () {
 			$(this).children(".mw").hide()
 		}
 	)
 });
-function lo(x) 
-{
+function lo(x) {
 	location.replace(x)
 }
-function op(x,y,url)
-{
+function op(x, y, url) {
 	$(x).fadeIn()
-	if(y)
-	$(y).fadeIn()
-	if(y&&url)
-	$(y).load(url)
+	if (y)
+		$(y).fadeIn()
+	if (y && url)
+		$(y).load(url)
 }
-function cl(x)
-{
+function cl(x) {
 	$(x).fadeOut();
+}
+
+function del(table, id) {
+	$.post("./api/del.php", { table, id }, () => {
+		location.reload();
+	})
+}
+
+function clean() {
+	$("input[type='text'],input[type='password'],input[type='number'],input[type='radio']").val("");
 }
