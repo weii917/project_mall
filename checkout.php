@@ -223,7 +223,6 @@ $row = $Mem->find(['acc' => $_SESSION['mem']]);
                                 <button class="my-buycart-back btn" type="button" onclick="location.href='buycart.php'">返回購物車</button>
                                 <input class="my-btn-buycart btn" type="submit" value="結帳">
                                 <input type="hidden" name="total" value="<?= $total; ?>">
-
                             </div>
 
                             <script>

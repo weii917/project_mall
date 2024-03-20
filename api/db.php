@@ -162,6 +162,7 @@ $Room = new DB('room');
 $Goods = new DB('goods');
 $Order = new DB('orders');
 $Type = new DB('type');
+$Qt = new DB('qt');
 //$tables=array_keys(get_defined_vars());
 /* dd($tables); */
 // 如果網址存在do變數，用此變數轉換為首字大寫ucfirst

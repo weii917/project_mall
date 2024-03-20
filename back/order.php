@@ -1,6 +1,7 @@
 <div class="col" style="height: 80%;">
     <div class="row mt-5 my-box-shadow">
         <p class="text-center fs-3 fw-bold">訂單管理</p>
+        <div> <button class="btn btn-dark w-30" onclick="location.href='?do=export'">匯出資料</button></div>
 
         <table class="mx-auto" style="text-align: center;width:100%">
             <tbody>
