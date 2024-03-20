@@ -20,7 +20,7 @@
                 foreach ($rows as $row) {
                 ?>
                     <tr>
-                        <td><a href="?do=detail&id=<?= $row['id']; ?>">
+                        <td><a href="?do=detail&id=<?= $row['id']; ?>" title='詳細訂單'>
                                 <?= $row['no']; ?>
                             </a></td>
 
