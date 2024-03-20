@@ -1,7 +1,7 @@
 <?php include_once "../api/db.php"; ?>
 <h3>編輯次選單</h3>
 <hr>
-<form action="./api/submenu.php" method="post" enctype="multipart/form-data">
+<form action="../api/submenu.php" method="post" enctype="multipart/form-data">
     <table  class='cent' id='sub'>
         <tr>
             <td>次名稱</td>

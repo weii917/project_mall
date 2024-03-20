@@ -1,3 +1,9 @@
+<?php
+if (isset($_GET['error'])) {
+    echo "<script>alert('{$_GET['error']}')</script>";
+}
+?>
+
 <div class="col" style="height: 80%;">
     <div class="row mt-5 my-box-shadow">
         <p class="text-center fs-3 fw-bold">管理者帳號管理</p>
@@ -25,10 +31,15 @@
                                     if ($row['acc'] == 'admin') {
                                         echo "此帳號為最高權限";
                                     } else {
+                                        if ($_SESSION['admin'] == 'admin') {
                                     ?>
-                                    <button class="btn btn-secondary" onclick="location.href='?do=edit_admin&id=<?= $row['id']; ?>'">修改</button>
-                                    <button onclick="del('admin',<?= $row['id']; ?>)">刪除</button>
+
+                                        <button class="btn btn-secondary" type="button" onclick="location.href='?do=edit_admin&id=<?= $row['id']; ?>'">管理</button>
+                                        <button class="btn btn-outline-dark" type="button" onclick="del('admin',<?= $row['id']; ?>)">刪除</button>
                                 <?php
+                                        } else {
+                                            echo '';
+                                        }
                                     }
                                 ?>
                             </td>

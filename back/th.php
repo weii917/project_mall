@@ -69,7 +69,7 @@
                             <td><?= $good['stock']; ?></td>
                             <td><?= ($good['sh'] == 1) ? "販售中" : "已下架"; ?></td>
                             <td style="width:120px">
-                                <button class="btn my-btn-ok" onclick="location.href='?do=edit_goods&id=<?= $good['id']; ?>'">修改</button>
+                                <button class="btn my-btn-ok" type="button" onclick="location.href='?do=edit_goods&id=<?= $good['id']; ?>'">修改</button>
                                 <button class="btn my-btn-reset" onclick="del('goods',<?= $good['id']; ?>)">刪除</button>
                                 <button class="btn btn-secondary" onclick="sh(1,<?= $good['id']; ?>)">上架</button>
                                 <button class="btn btn-outline-dark" onclick="sh(0,<?= $good['id']; ?>)">下架</button>

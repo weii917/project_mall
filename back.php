@@ -2,6 +2,9 @@
 if (!isset($_SESSION['admin'])) {
   to("index.php");
 }
+
+$admin = $Admin->find(['acc' => $_SESSION['admin']]);
+$pr = unserialize($admin['pr']);
 ?>
 
 <!doctype html>
@@ -295,15 +298,153 @@ if (!isset($_SESSION['admin'])) {
                   Home
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link d-flex align-items-center gap-2" href="?do=title">
-                  <svg class="bi">
-                    <use xlink:href="#file-earmark" />
+              <?php
+              echo (in_array(1, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=title'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
                   </svg>
                   網站標題管理
                 </a>
-              </li>
-              <li class="nav-item">
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(2, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=book'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  訂房資料管理
+                </a>
+              </li>" : '';
+              ?>
+
+              <?php
+              echo (in_array(3, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=mvim'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  關於我們管理
+                </a>
+              </li>" : '';
+              ?>
+
+              <?php
+              echo (in_array(4, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=room'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  房型介紹管理
+                </a>
+              </li>" : '';
+              ?>
+
+              <?php
+              echo (in_array(5, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=th'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  商品介紹管理
+                </a>
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(6, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=order'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  訂單管理
+                </a>
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(7, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=address'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  聯絡我們管理
+                </a>
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(8, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=news'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  住宿須知管理
+                </a>
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(9, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=image'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  輪播圖片管理
+                </a>
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(10, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=menu'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  選單管理
+                </a>
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(11, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=bottom'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  頁尾版權管理
+                </a>
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(12, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=admin'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  管理者帳號管理
+                </a>
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(13, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=mem'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  會員帳號管理
+                </a>
+              </li>" : '';
+              ?>
+              <?php
+              echo (in_array(14, $pr)) ? "<li class='nav-item'>
+                <a class='nav-link d-flex align-items-center gap-2' href='?do=total'>
+                  <svg class='bi'>
+                    <use xlink:href='#file-earmark' />
+                  </svg>
+                  進站總人數管理
+                </a>
+              </li>" : '';
+              ?>
+
+
+
+              <!-- <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="?do=book">
                   <svg class="bi">
                     <use xlink:href="#file-earmark" />
@@ -408,75 +549,27 @@ if (!isset($_SESSION['admin'])) {
                   進站總人數管理
                 </a>
               </li>
-            </ul>
-
-            <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
-              <hr>
-              <a class="link-secondary" href="#" aria-label="Add a new report">
-                <svg class="bi">
-                  <use xlink:href="#plus-circle" />
-                </svg>
-              </a>
-            </h6> -->
-            <hr>
-            <ul class="nav flex-column mb-auto">
+            </ul> -->
 
               <!--  -->
-              <div id="menuput" class="dbor">
-                <!--主選單放此-->
-                <!-- <li class="nav-item">
-                  <a class="my-nav-home nav-link d-flex align-items-center gap-2" aria-current="page" href="index.php">
-                    <svg class="bi">
-                      <use xlink:href="#gear-wide-connected" />
-                    </svg>
-                    主選單區
-                  </a>
-                </li>
-         
-                <?php
-                $mainmu = $Menu->all(['sh' => 1]);
-                foreach ($mainmu as $main) {
-                ?>
-                  <li class="nav-item">
 
-                    <a class="nav-link d-flex align-items-center gap-2" href="<?= $main['href']; ?>">
-                      <svg class="bi">
-                        <use xlink:href="#file-earmark-text" />
-                      </svg>
-                      <?= $main['text']; ?>
-
-
-                    </a>
-                  </li>
-                <?php
-                }
-                ?>
-              </div> -->
-
-                <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center gap-2" href="#">
-                    <svg class="bi">
-                      <use xlink:href="#file-earmark-text" />
-                    </svg>
-                    進站總人數 :<?= $Total->find(1)['total']; ?>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center gap-2" href="./api/logout.php">
-                    <svg class="bi">
-                      <use xlink:href="#door-closed" />
-                    </svg>
-                    Sign out
-                  </a>
-                </li>
-                <!-- <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link d-flex align-items-center gap-2" href="#">
                   <svg class="bi">
                     <use xlink:href="#file-earmark-text" />
                   </svg>
-                  Year-end sale
+                  進站總人數 :<?= $Total->find(1)['total']; ?>
                 </a>
-              </li> -->
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center gap-2" href="./api/logout.php">
+                  <svg class="bi">
+                    <use xlink:href="#door-closed" />
+                  </svg>
+                  Sign out
+                </a>
+              </li>
+
             </ul>
 
             <hr class="my-3">

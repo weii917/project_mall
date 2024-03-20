@@ -1,7 +1,7 @@
 <div class="container p-5 ">
     <h3 class='text-center fs-3 fw-bold'>新增住宿需知</h3>
     <hr>
-    <form action="./api/add.php" method="post" enctype="multipart/form-data">
+    <form action="../api/add.php" method="post" enctype="multipart/form-data">
         <table style="width: 100%;">
 
             <tr>
