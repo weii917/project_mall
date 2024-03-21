@@ -48,9 +48,9 @@
         <button onclick="location.href='?do=add_goods'" class="btn btn-dark">新增商品</button>
         <form method="post" action="./api/edit.php">
 
-            <table width="100%" style="text-align: center;">
+            <table width="100%" style="text-align: center;" class="table">
                 <tbody>
-                    <tr class="">
+                    <tr class="table-secondary">
                         <td width="10%">編號</td>
                         <td width="40%">商品名稱</td>
                         <td width="10%">庫存量</td>

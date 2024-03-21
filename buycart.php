@@ -190,7 +190,7 @@ if (!isset($_SESSION['mem'])) {
 
                         <script>
                             function delCart(id) {
-                                $.post("../api/del_cart.php", {
+                                $.post("./api/del_cart.php", {
                                     id
                                 }, () => {
                                     location.href = "?";

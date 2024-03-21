@@ -1,7 +1,7 @@
 <div class="container p-5 ">
     <h3 class='text-center fs-3 fw-bold'>新增輪播圖片</h3>
     <hr>
-    <form action="../api/add.php" method="post" enctype="multipart/form-data">
+    <form action="./api/add.php" method="post" enctype="multipart/form-data">
         <table style="width: 100%;" class="mx-auto">
             <tr>
                 <td>輪播圖片:</td>

@@ -170,9 +170,9 @@ $row = $Mem->find(['acc' => $_SESSION['mem']]);
 
                         if (empty($_SESSION['cart'])) {
                         ?>
-                            <div style="width:100%;height:50vh;background-color:white">
-                                <h3 class="text-center">購物車內無任何商品</h3>
-                                <button class="my-buycart-back btn" onclick="location.href='index.php#item-2-goods'">繼續購物</button>
+                            <div style="width:100%;height:50vh;background-color:white" class="text-center my-buycart-bg">
+                                <h3 class="text-center" style="color: white;">購物車內無任何商品</h3>
+                                <button class="my-buycart-back btn" type='button' onclick="location.href='index.php#item-2-goods'">繼續購物</button>
                             </div>
                         <?php
 
@@ -227,7 +227,7 @@ $row = $Mem->find(['acc' => $_SESSION['mem']]);
 
                             <script>
                                 function delCart(id) {
-                                    $.post("../api/del_cart.php", {
+                                    $.post("./api/del_cart.php", {
                                         id
                                     }, () => {
                                         location.href = "?";

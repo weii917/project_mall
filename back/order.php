@@ -3,9 +3,9 @@
         <p class="text-center fs-3 fw-bold">訂單管理</p>
         <div> <button class="btn btn-dark w-30" onclick="location.href='?do=export'">匯出資料</button></div>
 
-        <table class="mx-auto" style="text-align: center;width:100%">
+        <table class="mx-auto table" style="text-align: center;width:100%">
             <tbody>
-                <tr class="yel">
+                <tr class="table-secondary">
                     <td width="16.6%">訂單編號</td>
                     <td width="16.6%">金額</td>
                     <td width="16.6%">會員帳號</td>

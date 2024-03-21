@@ -2,7 +2,7 @@
 <div class="container p-5 ">
     <h3 class='text-center fs-3 fw-bold'>編輯次項目</h3>
     <hr>
-    <form action="../api/subnews.php" method="post" enctype="multipart/form-data">
+    <form action="./api/subnews.php" method="post" enctype="multipart/form-data">
         <table class='cent' id='sub'>
             <tr>
                 <td class="text-center fs-5 fw-bold">次項目名稱</td>

@@ -59,7 +59,7 @@ $row = $Order->find($_GET['id']);
                 </tr>
 
             <?php
-                $total = $good['price'] * $qt;
+                $total += $good['price'] * $qt;
             }
             ?>
             <tr>

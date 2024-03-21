@@ -2,7 +2,7 @@
 <div class="container p-5 ">
     <h3 class='fs-3 fw-bold'>新增動態文字廣告</h3>
     <hr>
-    <form action="../api/add.php" method="post" enctype="multipart/form-data">
+    <form action="./api/add.php" method="post" enctype="multipart/form-data">
         <table>
 
             <tr>
