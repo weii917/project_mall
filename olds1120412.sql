@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2024 年 03 月 29 日 14:31
+-- 產生時間： 2024 年 03 月 16 日 09:21
 -- 伺服器版本： 10.3.39-MariaDB-0ubuntu0.20.04.2
 -- PHP 版本： 7.4.3-4ubuntu2.19
 
@@ -56,18 +56,17 @@ INSERT INTO `address` (`id`, `iframe`, `address`, `tel`, `timing`, `open`, `fb`,
 CREATE TABLE `admin` (
   `id` int(10) UNSIGNED NOT NULL,
   `acc` text NOT NULL,
-  `pw` text NOT NULL,
-  `pr` text NOT NULL
+  `pw` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `admin`
 --
 
-INSERT INTO `admin` (`id`, `acc`, `pw`, `pr`) VALUES
-(1, 'admin', '1234', 'a:14:{i:0;s:1:\"1\";i:1;s:1:\"2\";i:2;s:1:\"3\";i:3;s:1:\"4\";i:4;s:1:\"5\";i:5;s:1:\"6\";i:6;s:1:\"7\";i:7;s:1:\"8\";i:8;s:1:\"9\";i:9;s:2:\"10\";i:10;s:2:\"11\";i:11;s:2:\"12\";i:12;s:2:\"13\";i:13;s:2:\"14\";}'),
-(48, 'aaa', 'aaa', 'a:10:{i:0;s:1:\"1\";i:1;s:1:\"6\";i:2;s:1:\"7\";i:3;s:1:\"8\";i:4;s:1:\"9\";i:5;s:2:\"10\";i:6;s:2:\"11\";i:7;s:2:\"12\";i:8;s:2:\"13\";i:9;s:2:\"14\";}'),
-(49, 'cat', 'cat', 'a:4:{i:0;s:1:\"2\";i:1;s:1:\"4\";i:2;s:1:\"5\";i:3;s:1:\"6\";}');
+INSERT INTO `admin` (`id`, `acc`, `pw`) VALUES
+(2, 'root', '7890'),
+(6, 'cat', 'cat'),
+(9, 'admin', '1234');
 
 -- --------------------------------------------------------
 
@@ -124,40 +123,6 @@ INSERT INTO `bottom` (`id`, `bottom`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `goods`
---
-
-CREATE TABLE `goods` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `no` text NOT NULL,
-  `name` text NOT NULL,
-  `price` int(10) NOT NULL,
-  `stock` int(10) NOT NULL,
-  `img` text NOT NULL,
-  `intro` text NOT NULL,
-  `big` int(10) NOT NULL,
-  `mid` int(10) NOT NULL,
-  `sh` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `goods`
---
-
-INSERT INTO `goods` (`id`, `no`, `name`, `price`, `stock`, `img`, `intro`, `big`, `mid`, `sh`) VALUES
-(1, '010706', '貓咪小物', 250, 200, 'item1.jpg', '細品慢生活', 3, 19, 1),
-(2, '020705', '貓咪玩具', 120, 18, 'item2.jpg', '細品慢生活', 2, 18, 1),
-(3, '020706', '逗貓棒', 250, 61, 'item3.jpg', '細品慢生活', 2, 18, 1),
-(4, '030103', '貓跳台1.0', 520, 6, 'item4.jpg', '細品慢生活', 1, 5, 1),
-(5, '030203', '貓跳台2.0', 650, 8, 'item5.jpg', '細品慢生活', 1, 5, 1),
-(6, '040202', '貓窩', 520, 1, 'item6.jpg', '細品慢生活', 1, 6, 1),
-(7, '050107', '背包', 888, 15, 'item7.jpg', '細品慢生活', 4, 11, 1),
-(8, '060108', '逗貓棒', 120, 7, 'item8.jpg', '細品慢生活', 2, 18, 1),
-(10, '646379', '貓咪大背包', 899, 90, 'neom-V8w0gSmxajY-unsplash.jpg', '貓咪大背包貓咪大背包', 1, 5, 0);
-
--- --------------------------------------------------------
-
---
 -- 資料表結構 `image`
 --
 
@@ -178,34 +143,6 @@ INSERT INTO `image` (`id`, `img`, `sh`) VALUES
 (16, 'cat10.jpg', 1),
 (17, 'cat11.jpg', 1),
 (18, 'cat12.jpg', 1);
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `mem`
---
-
-CREATE TABLE `mem` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` text NOT NULL,
-  `acc` text NOT NULL,
-  `pw` text NOT NULL,
-  `tel` text NOT NULL,
-  `addr` text NOT NULL,
-  `email` text NOT NULL,
-  `regdate` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `mem`
---
-
-INSERT INTO `mem` (`id`, `name`, `acc`, `pw`, `tel`, `addr`, `email`, `regdate`) VALUES
-(1, '張小明', 'aaaaa', 'dfadsf', '0975787687', '新北市泰山區', 'macklun@gmail.com', '2024-01-22'),
-(3, 'mem01', 'mem01', 'mem01', 'dddddddd', 'ddddd', 'dddd', '2024-02-16'),
-(8, 'mem03', 'mem03', 'mem03', 'mem03', 'mem03', 'mem03', '2024-03-18'),
-(11, 'mem05', 'mem02', 'mem02', 'mem05', 'mem05', 'mem05', '2024-03-21'),
-(12, 'cat', 'cat', 'cat', '097894564', 'cat', 'cat@gmail.com', '2024-03-21');
 
 -- --------------------------------------------------------
 
@@ -231,8 +168,7 @@ INSERT INTO `menu` (`id`, `text`, `href`, `sh`) VALUES
 (10, '住宿須知', 'index.php#item-5-news', 1),
 (12, '環境介紹', 'index.php#item-4-img', 1),
 (19, '聯絡我們', 'index.php#item-3-contact', 1),
-(22, '線上預約', 'book.php', 1),
-(24, '線上購物', 'index.php#item-2-goods', 1);
+(22, '線上預約', 'book.php', 1);
 
 -- --------------------------------------------------------
 
@@ -305,81 +241,6 @@ INSERT INTO `news` (`id`, `text`, `sh`, `news_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `orders`
---
-
-CREATE TABLE `orders` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `no` text NOT NULL,
-  `total` int(10) NOT NULL,
-  `acc` text NOT NULL,
-  `name` text NOT NULL,
-  `orderdate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `tel` text NOT NULL,
-  `addr` text NOT NULL,
-  `email` text NOT NULL,
-  `cart` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `orders`
---
-
-INSERT INTO `orders` (`id`, `no`, `total`, `acc`, `name`, `orderdate`, `tel`, `addr`, `email`, `cart`) VALUES
-(40, '20240320456437', 1000, 'mem01', 'mem01', '2024-03-20 11:56:42', 'dddddddd', 'ddddd', 'dddd', 'a:1:{i:4;s:1:\"1\";}'),
-(41, '20240320939564', 5697, 'mem01', 'mem01', '2024-03-20 12:10:39', 'dddddddd', 'ddddd', 'dddd', 'a:2:{i:4;s:1:\"3\";i:10;s:1:\"3\";}'),
-(42, '20240320527096', 273000, 'mem01', 'mem01', '2024-03-20 12:11:31', 'abc', 'abc', 'abc', 'a:2:{i:3;s:2:\"10\";i:5;s:3:\"100\";}'),
-(43, '20240320121447', 2650, 'mem01', '王曉明', '2024-03-20 12:35:53', 'dddddddd', 'ddddd', 'dddd', 'a:1:{i:5;s:1:\"1\";}'),
-(44, '20240320127073', 9823, 'mem01', 'mem01', '2024-03-20 14:43:52', '09298765432', '桃園', 'www@gmail.com', 'a:2:{i:10;s:1:\"5\";i:7;s:1:\"6\";}'),
-(45, '20240320821572', 3060, 'mem03', 'mem03', '2024-03-20 15:32:30', '123456789', '綠島', 'mem03@gmail.com', 'a:2:{i:3;s:1:\"6\";i:4;s:1:\"3\";}'),
-(46, '20240321519727', 3960, 'mem02', 'mem02', '2024-03-21 04:52:54', '22079845', 'mem02', 'mem02', 'a:3:{i:2;s:1:\"6\";i:8;s:1:\"1\";i:6;s:1:\"6\";}'),
-(48, '20240321243448', 480, 'cat', 'cat', '2024-03-21 06:27:37', '097894564', 'cat', 'cat@gmail.com', 'a:1:{i:8;s:1:\"4\";}'),
-(49, '20240322122990', 240, 'mem01', 'mem01', '2024-03-22 01:45:41', 'dddddddd', 'ddddd', 'dddd', 'a:1:{i:8;s:1:\"2\";}');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `qt`
---
-
-CREATE TABLE `qt` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `1` int(10) NOT NULL DEFAULT 0,
-  `2` int(10) NOT NULL DEFAULT 0,
-  `3` int(10) NOT NULL DEFAULT 0,
-  `4` int(10) NOT NULL DEFAULT 0,
-  `5` int(10) NOT NULL DEFAULT 0,
-  `6` int(10) NOT NULL DEFAULT 0,
-  `7` int(10) NOT NULL DEFAULT 0,
-  `8` int(10) NOT NULL DEFAULT 0,
-  `10` int(10) NOT NULL DEFAULT 0,
-  `acc` text NOT NULL,
-  `name` text NOT NULL,
-  `tel` text NOT NULL,
-  `addr` text NOT NULL,
-  `total` int(10) NOT NULL,
-  `orderno` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `qt`
---
-
-INSERT INTO `qt` (`id`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `10`, `acc`, `name`, `tel`, `addr`, `total`, `orderno`) VALUES
-(2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 'mem01', 'mem01', 'dddddddd', 'ddddd', 1000, '20240320456437'),
-(3, 0, 0, 0, 3, 0, 0, 0, 0, 3, 'mem01', 'mem01', 'dddddddd', 'ddddd', 5697, '20240320939564'),
-(4, 0, 0, 10, 0, 100, 0, 0, 0, 0, 'mem01', 'mem01', 'abc', 'abc', 273000, '20240320527096'),
-(5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 'mem01', '王曉明', 'dddddddd', 'ddddd', 2650, '20240320121447'),
-(6, 0, 0, 0, 0, 0, 0, 6, 0, 5, 'mem01', 'mem01', '09298765432', '桃園', 9823, '20240320127073'),
-(7, 0, 0, 6, 3, 0, 0, 0, 0, 0, 'mem03', 'mem03', '123456789', '綠島', 3060, '20240320821572'),
-(8, 0, 6, 0, 0, 0, 6, 0, 1, 0, 'mem02', 'mem02', '22079845', 'mem02', 3960, '20240321519727'),
-(9, 3, 0, 0, 3, 0, 0, 0, 0, 0, 'mem03', 'mem03', '097894561', '嘉義市', 2310, '20240321677880'),
-(10, 0, 0, 0, 0, 0, 0, 0, 4, 0, 'cat', 'cat', '097894564', 'cat', 480, '20240321243448'),
-(11, 0, 0, 0, 0, 0, 0, 0, 2, 0, 'mem01', 'mem01', 'dddddddd', 'ddddd', 240, '20240322122990');
-
--- --------------------------------------------------------
-
---
 -- 資料表結構 `que`
 --
 
@@ -427,7 +288,7 @@ INSERT INTO `room` (`id`, `img`, `room`, `text`, `sh`) VALUES
 (1, 'cat3.jpg', '經典房', '寬 100cm * 深 145cm * 高 350cm \r\n基本舒適房型  \r\n1貓／晚 790元\r\n\r\n最多入住 : 2貓 \r\n適合幼小害羞貓咪 \r\n\r\n提供：陶瓷貓碗、實木貓碗架、 開放型貓砂盆 \r\n貓砂提供：礦砂、豆腐砂、松木砂 \r\n\r\n房間和公共空間均有24小時的雲端監控系統 \r\n二層貓跳台 供貓咪跳躍使用\r\n', 1),
 (2, 'cat4.jpg', '溫馨房', '寬 155cm * 深 150cm * 高 350cm \r\n溫馨舒適  \r\n1貓／晚 990元\r\n\r\n最多入住 : 4貓\r\n適合成年活潑貓咪\r\n \r\n提供：陶瓷貓碗、實木貓碗架、 開放型貓砂盆 \r\n貓砂提供：礦砂、豆腐砂、松木砂\r\n\r\n房間和公共空間均有24小時的雲端監控系統\r\n四層貓跳台 供貓咪跳躍使用', 1),
 (3, 'cat13.gif', '星空房', '寬 200cm * 深 150cm * 高 350cm\r\n獨立景觀窗  \r\n1貓／晚 1150元\r\n\r\n最多入住 : 6貓 \r\n適合家中多數貓咪 \r\n\r\n提供：陶瓷貓碗、實木貓碗架、 開放型貓砂盆\r\n貓砂提供：礦砂、豆腐砂、松木砂 \r\n\r\n房間和公共空間均有24小時的雲端監控系統\r\n四層貓跳台 供貓咪跳躍使用 \r\n有觀景窗的大家庭房，最適合多貓又各自有個性的家庭！', 1),
-(7, 'cat9.jpg', 'zzzzz', 'zzzzzzzzz', 0);
+(7, 'cat2.jpg', 'zzzzz', 'zzzzzzzzz', 0);
 
 -- --------------------------------------------------------
 
@@ -447,9 +308,9 @@ CREATE TABLE `titles` (
 --
 
 INSERT INTO `titles` (`id`, `img`, `text`, `sh`) VALUES
-(11, 'cat4.jpg', '最細心\r\n的照料', 1),
+(11, 'cat4.jpg', '最細心\r\n的照料', 0),
 (12, 'cat2.jpg', '最細心\r\n的照料', 0),
-(24, 'cat9.jpg', '最細心\r\n的照料', 0);
+(24, 'cat11.jpg', '最細心\r\n', 1);
 
 -- --------------------------------------------------------
 
@@ -467,36 +328,7 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`id`, `total`) VALUES
-(1, 2102);
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `type`
---
-
-CREATE TABLE `type` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` text NOT NULL,
-  `big_id` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `type`
---
-
-INSERT INTO `type` (`id`, `name`, `big_id`) VALUES
-(1, '貓用品', 0),
-(2, '貓玩具', 0),
-(3, '貓小物', 0),
-(4, '背包', 0),
-(5, '跳台', 1),
-(6, '貓窩', 1),
-(11, '寵物外出包', 4),
-(18, '逗貓玩具', 2),
-(19, '裝飾物品', 3),
-(20, '食品', 0),
-(21, 'music', 20);
+(1, 1040);
 
 --
 -- 已傾印資料表的索引
@@ -527,21 +359,9 @@ ALTER TABLE `bottom`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `goods`
---
-ALTER TABLE `goods`
-  ADD PRIMARY KEY (`id`);
-
---
 -- 資料表索引 `image`
 --
 ALTER TABLE `image`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `mem`
---
-ALTER TABLE `mem`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -560,18 +380,6 @@ ALTER TABLE `mvim`
 -- 資料表索引 `news`
 --
 ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `qt`
---
-ALTER TABLE `qt`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -599,12 +407,6 @@ ALTER TABLE `total`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `type`
---
-ALTER TABLE `type`
-  ADD PRIMARY KEY (`id`);
-
---
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
@@ -618,7 +420,7 @@ ALTER TABLE `address`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `book`
@@ -633,52 +435,28 @@ ALTER TABLE `bottom`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `goods`
---
-ALTER TABLE `goods`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
 -- 使用資料表自動遞增(AUTO_INCREMENT) `image`
 --
 ALTER TABLE `image`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `mem`
---
-ALTER TABLE `mem`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
 -- 使用資料表自動遞增(AUTO_INCREMENT) `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `mvim`
 --
 ALTER TABLE `mvim`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `qt`
---
-ALTER TABLE `qt`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `que`
@@ -696,19 +474,13 @@ ALTER TABLE `room`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `titles`
 --
 ALTER TABLE `titles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `total`
 --
 ALTER TABLE `total`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `type`
---
-ALTER TABLE `type`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
