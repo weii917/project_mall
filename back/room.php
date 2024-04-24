@@ -19,7 +19,12 @@
 
                     <!-- 取資料料表資料放入後台顯示表格中 -->
                     <?php
-                    $rows = $DB->all();
+                    $total = $DB->count();
+                    $div = 3;
+                    $pages = ceil($total / $div);
+                    $now = $_GET['p'] ?? 1;
+                    $start = ($now - 1) * $div;
+                    $rows = $DB->all(" limit $start,$div");
                     foreach ($rows as $row) {
 
                     ?>
@@ -38,7 +43,26 @@
                     ?>
                 </tbody>
             </table>
-            <table class="mt-5" style="margin-top:40px; width:100%;">
+            <!-- 處理分頁 -->
+            <div class="mt-3">
+                <ul class="nav nav-pills justify-content-center">
+                    <?php
+                    if ($now > 1) {
+                        $prev = $now - 1;
+                        echo "<li class='nav-item'><a class='text-bg-light nav-link' href='?do=$do&p=$prev'><i class='fa-solid fa-backward'></i></a></li>";
+                    }
+                    for ($i = 1; $i <= $pages; $i++) {
+                        $activeClass = ($now == $i) ? 'bg-dark-subtle' : '';
+                        echo "<li class='nav-item '><a class='text-bg-light nav-link $activeClass' href='?do=$do&p=$i'>$i</a></li>";
+                    }
+                    if ($now < $pages) {
+                        $next = $now + 1;
+                        echo "<li class='nav-item'><a class=' text-bg-light nav-link' href='?do=$do&p=$next'><i class='fa-solid fa-forward'></i></a></li>";
+                    }
+                    ?>
+                </ul>
+            </div>
+            <table class="mt-5" style="margin-top:40px; width:85%;">
                 <tbody>
                     <tr>
                         <input type="hidden" name="table" value="<?= $do; ?>">

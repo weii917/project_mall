@@ -51,8 +51,8 @@ if (!empty($_POST)) {
 
                                 勾選
                             </th>
-                            <th>編號</th>
-                            <th>貓咪小物</th>
+                            <th>訂單編號</th>
+                            <!-- <th>貓咪小物</th>
                             <th>玩具</th>
                             <th>逗貓棒a</th>
                             <th>貓跳台1.0</th>
@@ -60,41 +60,65 @@ if (!empty($_POST)) {
                             <th>貓窩</th>
                             <th>背包</th>
                             <th>逗貓棒b</th>
-                            <th>貓咪大背包</th>
+                            <th>貓咪大背包</th> -->
                             <th>會員帳號</th>
                             <th>姓名</th>
                             <th>電話</th>
                             <th>地址</th>
                             <th>總金額</th>
-                            <th>訂單編號</th>
+
 
 
                         </tr>
                         <!-- 取資料料表資料放入後台顯示表格中 -->
 
                         <?php
+                    
                         $rows = $Qt->all();
                         foreach ($rows as $row) {
+
                         ?>
                             <tr>
                                 <td>
                                     <input type="checkbox" name="select[]" value="<?= $row['id']; ?>">
                                 </td>
-                                <?php
-                                foreach ($row as $value) {
-                                ?>
-                                    <td>
-                                        <?= $value ?>
-                                    </td>
-                                <?php
-                                }
-                                ?>
+
+                                <td>
+                                    <a href="?do=detail&id=<?= $Order->find(['no' => $row['orderno']])['id']; ?>" title='詳細訂單'>
+                                        <?= $row['orderno'] ?>
+                                    </a>
+
+                                </td>
+                                <td>
+                                    <?= $row['acc'] ?>
+                                </td>
+                                <td>
+                                    <?= $row['name'] ?>
+                                </td>
+                                <td>
+                                    <?= $row['tel'] ?>
+                                </td>
+                                <td>
+                                    <?= $row['addr'] ?>
+                                </td>
+                                <td>
+                                    <span class='total'> <?= $row['total'] ?></span>
+
+                                </td>
+
                             </tr>
                         <?php
+
                         }
                         ?>
+                        <tr>
+                            <td colspan="5"></td>
+                            <td colspan="1">總金額</td>
+                            <td colspan="1">&nbsp;<span class='allTotal'></span></td>
+                        </tr>
                     </tbody>
                 </table>
+               
             </div>
             <div class="text-center mt-3"> <button class="btn my-btn-ok" type="button" onclick="location.href='?do=order'">返回</button></div>
 
@@ -110,4 +134,12 @@ if (!empty($_POST)) {
             $("input[name='select[]']").prop('checked', false);
         }
     })
+
+    let total = $(".total");
+    let totalAmount = 0;
+    total.each(function() {
+        totalAmount += parseFloat($(this).text());
+    })
+    console.log(totalAmount);
+    $(".allTotal").text(totalAmount)
 </script>
