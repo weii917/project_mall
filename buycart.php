@@ -266,7 +266,7 @@ if (!isset($_SESSION['mem'])) {
         // console.log('price', price);
         if (qt <= 0) {
 
-            $.post("../api/del_cart.php", {
+            $.post("./api/del_cart.php", {
                 id
             }, () => {
                 location.href = "?";
