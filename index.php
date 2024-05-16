@@ -165,51 +165,6 @@
 		<!-- 結束中間主要顯示區塊 -->
 		<div id="item-4-img"></div>
 		<div class="row">
-			<!-- 先前的輪播圖 -->
-			<!-- <div class="col-12 mx-auto align-items-center justify-content-center d-flex " style="width:89%; height:500px;">
-			
-
-				<div class="cent" onclick="pp(1)"><i class="fa-solid fa-paw my-cat-prev"></i></div>
-				<?php
-
-				$imgs = $Image->all(['sh' => 1]);
-				foreach ($imgs as $idx => $img) {
-				?>
-					產生一個帶有顯示的id #ssaa隱藏的clss="im"，讓function能觸發執行該區域要顯示還是隱藏
-					<div id="ssaa<?= $idx; ?>" class="im cent">
-						<img src="./img/<?= $img['img']; ?>" style="width:450px;height:450px;border:3px solid black;margin:3px">
-					</div>
-
-				<?php
-				}
-				?>
-
-				<div class="cent" onclick="pp(2)"><i class="fa-solid fa-paw my-cat-next"></i></div>
-				<script>
-					如果是1>=0，nowapge-1=0，讓#ssaa0因前面id="ssaa=idx "設的數字從idx取從0開始，所以要產生的命名為了與id的命名數字相同，索引從0開始所以放索引0的圖片依序存放
-					下一頁小於等於總共可以點的次數，如總圖片9張首頁已顯示3張點6次顯示完九張圖片
-					當前頁通常從1開始
-					var nowpage = 1,
-						num = <?= $Image->count(['sh' => 1]); ?>;
-
-					function pp(x) {
-						var s, t;
-						if (x == 1 && nowpage - 1 >= 0) {
-							nowpage--;
-						}
-						if (x == 2 && (nowpage + 1) <= num * 1 - 3) {
-							nowpage++;
-						}
-						$(".im").hide() 
-		
-						for (s = 0; s <= 2; s++) {
-							t = s * 1 + nowpage * 1;
-							$("#ssaa" + t).show()
-						}
-					}
-					pp(1)
-				</script>
-			</div> -->
 			<!-- 輪播圖片start -->
 			<div id="carouselExampleFade" class="carousel slide carousel-fade mx-auto">
 				<div class="carousel-inner">
@@ -283,13 +238,12 @@
 				</div>
 				<div class="row">
 					<div class="col-12 text-end mx-auto">
-						進站總人數 :<?= $Total->find(1)['total']; ?>
+						瀏覽人數 :<?= $Total->find(1)['total']; ?>
 					</div>
 				</div>
 			</footer>
 		</div>
-		<!-- <span class="t col" style="line-height:123px;"><?= $Bottom->find(1)['bottom']; ?></span>
-		<span class="t col">進站總人數 :<?= $Total->find(1)['total']; ?> </span> -->
+
 	</div>
 	<!-- 預約成功帶訊息回首頁 -->
 	<?php
@@ -306,11 +260,3 @@
 </body>
 
 </html>
-<!-- <div class="col" id="lf" style="float:left;"> -->
-
-<!-- 顯示進站人數 -->
-<!-- <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
-	<span class="t">進站總人數 :<?= $Total->find(1)['total']; ?> </span>
-</div> -->
-<!-- 結束進站人數 -->
-<!-- </div> -->
