@@ -69,14 +69,47 @@ if (isset($_GET['error'])) {
 
 
                 <?php
-                if (isset($_SESSION['login'])) {
+                if (isset($_SESSION['mem'])) {
                 ?>
-                    <button class="btn btn-outline-light p-2 m-2" onclick="lo('./api/logout.php')" type="button">登出</button>
-                    <button class="my-btn btn btn-outline-light p-2" onclick="lo('./back.php')">返回管理</button>
+                    <button class="my-btn btn btn-outline-light p-2 " onclick="lo('buycart.php')">
+                        <i class="fa-solid fa-cart-shopping"></i>(
+                        <span id='amount'>
+                            <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+                                echo count($_SESSION['cart']);
+                            } else {
+                                echo 0;
+                            }
+                            ?>
+                        </span> )</button> &nbsp; &nbsp; |&nbsp; &nbsp;
+                    <button class="btn btn-outline-light p-2 m-2" onclick="lo('./api/logout.php')" type="button">登出</button> &nbsp; &nbsp; |&nbsp; &nbsp;
                 <?php
                 } else {
                 ?>
-                    <button class="my-btn btn btn-outline-light" onclick="lo('./front/login.php')">管理登入</button>
+                    <button class="my-btn btn btn-outline-light p-2" onclick="lo('buycart.php')">
+                        <i class="fa-solid fa-cart-shopping"></i>(
+                        <span id='amount'>
+                            <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+                                echo count($_SESSION['cart']);
+                            } else {
+                                echo 0;
+                            }
+                            ?>
+                        </span> )</button>&nbsp; &nbsp; |&nbsp; &nbsp;
+                    <button class="my-btn btn btn-outline-light p-2" onclick="lo('./front/login.php')">會員登入</button>&nbsp; &nbsp;|&nbsp; &nbsp;
+
+                <?php
+                }
+                ?>
+
+                <?php
+                if (isset($_SESSION['admin'])) {
+                ?>
+
+                    <button class="my-btn btn btn-outline-light p-2" onclick="lo('back.php')">返回管理</button>&nbsp; &nbsp; |&nbsp; &nbsp;
+                <?php
+                } else {
+                ?>
+                    <button class="my-btn btn btn-outline-light" onclick="lo('./front/admin.php')">管理登入</button>&nbsp; &nbsp; |&nbsp; &nbsp;
                 <?php
                 }
                 ?>
