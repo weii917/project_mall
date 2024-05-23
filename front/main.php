@@ -244,7 +244,7 @@
 					Email:
 					<?= $Address->find(1)['email']; ?><br>
 
-					v:
+					ig:
 					<?= $Address->find(1)['ig']; ?><br>
 
 				</div>
